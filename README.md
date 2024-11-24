@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/2befc844-8620-4aad-8745-bad1a6683642)
-![lbserverHit](https://github.com/user-attachments/assets/b4404f2c-0497-4049-beab-649e0c7f9c00)
+
 
 # Load Balancer with URL Shortening & Analytics
 
@@ -21,6 +20,9 @@ This application provides a load balancer system that allows users to shorten a 
 - Node.js (v14.x or higher)
 - MongoDB (or MongoDB Atlas)
 - NPM or Yarn for package management
+
+![image](https://github.com/user-attachments/assets/2befc844-8620-4aad-8745-bad1a6683642)
+![lbserverHit](https://github.com/user-attachments/assets/b4404f2c-0497-4049-beab-649e0c7f9c00)
 
 ## Installation
 1. **Clone the repository:**
