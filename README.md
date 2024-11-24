@@ -33,6 +33,10 @@ This application provides a load balancer system that allows users to shorten a 
 
 2. **Install dependencies:**
     ```bash
+    cd server
+    npm install
+    cd..
+    cd client
     npm install
     ```
 
@@ -45,61 +49,17 @@ This application provides a load balancer system that allows users to shorten a 
 
 4. **Start the application:**
     ```bash
-    npm start
+    cd server
+    node app.js
     ```
     This will start the server on port 5000 by default.
+    ```bash
+    cd client
+    npm start
+    ```
+    This will start the frontend react server.
 
-## Endpoints
 
-### `POST /api/shorten`
-Generates a shortened URL for a list of server URLs.
-
-**Request Body:**
-```json
-{
-  "servers": [
-    {
-      "name": "Server 1",
-      "url": "http://server1.com"
-    },
-    {
-      "name": "Server 2",
-      "url": "http://server2.com"
-    }
-  ]
-}
-Response:
-
-json
-Copy code
-{
-  "shortUrl": "http://localhost:5000/shortenedCode"
-}
-GET /:code
-Redirects to one of the healthy servers based on the load balancing algorithm (least connections).
-
-Response:
-Redirects to the appropriate server URL.
-
-GET /api/analytics/:code
-Fetches analytics for a specific shortened URL, including hit counts and server status.
-
-Response:
-
-json
-Copy code
-{
-  "hitCount": 10,
-  "hitData": {
-    "Server 1": [
-      { "timestamp": 1632138972000 },
-      { "timestamp": 1632139000000 }
-    ],
-    "Server 2": [
-      { "timestamp": null } // Server down
-    ]
-  }
-}
 Health Check and Load Balancing Logic
 The system performs health checks on each server every 5 seconds to ensure traffic is only directed to healthy servers.
 The load balancing algorithm selects the server with the least number of active connections to handle incoming requests.
